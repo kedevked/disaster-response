@@ -2,6 +2,8 @@
 
 This project is part of Udacity Data-Science Nanodegree. It uses ETL pipeline to process the data and a machine learning pipeline to train and predict.
 
+The machine learning pipeline is made of nlp using tf-idf and a randomclassifier. Multiple targets are predicted by using [multi output classifier](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html)
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up the database and model.
 
