@@ -45,7 +45,8 @@ def index():
     genre_names = list(genre_counts.index)
     
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+    related_cat_counts = df.drop(['related'], axis=1).sum(axis=1)
+    related_cat_names = list(related_cat_counts.index)
     graphs = [
         {
             'data': [
@@ -62,6 +63,24 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=related_cat_names,
+                    y=related_cat_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Message per categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Categories"
                 }
             }
         }
